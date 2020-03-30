@@ -18,7 +18,7 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
         BindViewTools.bind(this);
         if (null != mTextView) {
-            mTextView.setText("TestActivity bind TextView success");
+            mTextView.setText("java apt bind TextView success");
         }
     }
 }
