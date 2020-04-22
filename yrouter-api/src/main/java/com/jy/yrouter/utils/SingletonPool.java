@@ -27,7 +27,7 @@ public class SingletonPool {
             factory = RouterComponents.getDefaultFactory();
         }
         Object instance = getInstance(clazz, factory);
-        RLogUtils.i("[SingletonPool]   get instance of class = %s, result = %s", clazz, instance);
+        RLogUtils.iFormat("[SingletonPool]   get instance of class = %s, result = %s", clazz, instance);
         return (T) instance;
     }
 
@@ -40,7 +40,7 @@ public class SingletonPool {
             synchronized (CACHE) {
                 t = CACHE.get(clazz);
                 if (t == null) {
-                    RLogUtils.i("[SingletonPool] >>> create instance: %s", clazz);
+                    RLogUtils.iFormat("[SingletonPool] >>> create instance: %s", clazz);
                     t = factory.create(clazz);
                     //noinspection ConstantConditions
                     if (t != null) {

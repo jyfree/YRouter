@@ -27,10 +27,10 @@ public class ProviderPool {
         }
         Method provider = getProvider(clazz);
         if (provider == NOT_FOUND) {
-            RLogUtils.i("[ProviderPool] provider not found: %s", clazz);
+            RLogUtils.iFormat("[ProviderPool] provider not found: %s", clazz);
             return null;
         } else {
-            RLogUtils.i("[ProviderPool] provider found: %s", provider);
+            RLogUtils.iFormat("[ProviderPool] provider found: %s", provider);
             try {
                 return (T) provider.invoke(null);
             } catch (Exception e) {
@@ -57,7 +57,7 @@ public class ProviderPool {
 
     @NonNull
     private static Method findProvider(@NonNull Class clazz) {
-        RLogUtils.i("[ProviderPool] >>> find provider with reflection: %s", clazz);
+        RLogUtils.iFormat("[ProviderPool] >>> find provider with reflection: %s", clazz);
         for (Method method : clazz.getDeclaredMethods()) {
             if (method.getAnnotation(RouterProvider.class) != null) {
                 if (Modifier.isStatic(method.getModifiers()) &&

@@ -50,7 +50,7 @@ public abstract class LazyInitHelper {
                         RLogUtils.e(t);
                     }
                     if (RLogUtils.SHOW_LOG) {
-                        RLogUtils.i("%s init cost %s ms", mTag, SystemClock.uptimeMillis() - ts);
+                        RLogUtils.iFormat("%s init cost %s ms", mTag, SystemClock.uptimeMillis() - ts);
                     }
                 }
             }

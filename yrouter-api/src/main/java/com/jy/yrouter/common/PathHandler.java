@@ -62,7 +62,7 @@ public class PathHandler extends PostcardHandler {
             PostcardHandler parse = PostcardTargetTools.parse(target, exported, interceptors);
             PostcardHandler prev = mMap.put(path, parse);
             if (prev != null) {
-                RLogUtils.e("[%s] 重复注册path='%s'的PostcardHandler: %s, %s", this, path, prev, parse);
+                RLogUtils.eFormat("[%s] 重复注册path='%s'的PostcardHandler: %s, %s", this, path, prev, parse);
             }
         }
     }

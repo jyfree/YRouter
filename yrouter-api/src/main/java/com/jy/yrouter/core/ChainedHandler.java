@@ -47,7 +47,7 @@ public class ChainedHandler extends BaseChainedHandler {
             onError(postcard, ResultCode.CODE_BAD_REQUEST);
 
         } else {
-            RLogUtils.i("接收到路由请求: %s", postcard.toFullString());
+            RLogUtils.iFormat("接收到路由请求: %s", postcard.toFullString());
             handle(postcard, new RootInterceptCallback(postcard));
         }
     }
@@ -96,7 +96,7 @@ public class ChainedHandler extends BaseChainedHandler {
 
                 case CODE_REDIRECT:
                     // 重定向，重新跳转
-                    RLogUtils.i("重定向, result code = %s", resultCode);
+                    RLogUtils.iFormat("重定向, result code = %s", resultCode);
                     startPostcard(postcard);
                     break;
 
@@ -104,14 +104,14 @@ public class ChainedHandler extends BaseChainedHandler {
                     // 跳转成功
                     postcard.putField(Postcard.FIELD_RESULT_CODE, resultCode);
                     onSuccess(postcard);
-                    RLogUtils.i("跳转成功, result code = %s", resultCode);
+                    RLogUtils.iFormat("跳转成功, result code = %s", resultCode);
                     break;
 
                 default:
                     // 跳转失败
                     postcard.putField(Postcard.FIELD_RESULT_CODE, resultCode);
                     onError(postcard, resultCode);
-                    RLogUtils.i("跳转失败, result code = %s", resultCode);
+                    RLogUtils.iFormat("跳转失败, result code = %s", resultCode);
                     break;
             }
         }

@@ -225,7 +225,7 @@ public class ServiceLoader<I> {
                     factory = RouterComponents.getDefaultFactory();
                 }
                 T t = factory.create(clazz);
-                RLogUtils.i("[ServiceLoader] create instance: %s, result = %s", clazz, t);
+                RLogUtils.iFormat("[ServiceLoader] create instance: %s, result = %s", clazz, t);
                 return t;
             } catch (Exception e) {
                 RLogUtils.e(e);

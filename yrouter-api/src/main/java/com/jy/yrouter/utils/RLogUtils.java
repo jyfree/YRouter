@@ -55,6 +55,39 @@ public class RLogUtils {
         }
     }
 
+    //**************************format**********************************
+    public static void eFormat(String msgFormat, Object... args) {
+        if (SHOW_LOG) {
+            StackTraceElement traceElement = Thread.currentThread().getStackTrace()[3];
+            String message = String.format(msgFormat, args);
+            log(TAG, traceElement, message, LogLevel.ERROR);
+        }
+    }
+
+    public static void iFormat(String msgFormat, Object... args) {
+        if (SHOW_LOG) {
+            StackTraceElement traceElement = Thread.currentThread().getStackTrace()[3];
+            String message = String.format(msgFormat, args);
+            log(TAG, traceElement, message, LogLevel.INFO);
+        }
+    }
+
+    public static void wFormat(String msgFormat, Object... args) {
+        if (SHOW_LOG) {
+            StackTraceElement traceElement = Thread.currentThread().getStackTrace()[3];
+            String message = String.format(msgFormat, args);
+            log(TAG, traceElement, message, LogLevel.WARN);
+        }
+    }
+
+    public static void dFormat(String msgFormat, Object... args) {
+        if (SHOW_LOG) {
+            StackTraceElement traceElement = Thread.currentThread().getStackTrace()[3];
+            String message = String.format(msgFormat, args);
+            log(TAG, traceElement, message, LogLevel.DEBUG);
+        }
+    }
+
     private static String getString(Object... args) {
         if (args.length == 1) {
             return args[0].toString();

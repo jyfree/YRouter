@@ -35,7 +35,7 @@ public abstract class PostcardHandler {
 
     public void handle(@NonNull final Postcard postcard, @NonNull final InterceptCallback callback) {
         if (shouldHandle(postcard)) {
-            RLogUtils.i("路由处理器：%s-- 处理Postcard：%s", this, postcard);
+            RLogUtils.iFormat("路由处理器：%s-- 处理Postcard：%s", this, postcard);
             if (mInterceptor != null && !postcard.isSkipInterceptors()) {
                 mInterceptor.intercept(postcard, new InterceptCallback() {
                     @Override
@@ -52,7 +52,7 @@ public abstract class PostcardHandler {
                 handleInternal(postcard, callback);
             }
         } else {
-            RLogUtils.i("路由处理器：%s-- 不处理Postcard：%s", this, postcard);
+            RLogUtils.iFormat("路由处理器：%s-- 不处理Postcard：%s", this, postcard);
             callback.onNext();
         }
     }
