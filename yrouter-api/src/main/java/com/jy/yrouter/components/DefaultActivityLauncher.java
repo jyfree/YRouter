@@ -123,10 +123,10 @@ public class DefaultActivityLauncher implements ActivityLauncher {
 
                 if (internal) {
                     postcard.putField(FIELD_STARTED_ACTIVITY, INTERNAL_ACTIVITY);
-                    RLogUtils.i("internal activity started by StartActivityAction, postcard：", postcard);
+                    RLogUtils.i("internal activity started by StartActivityAction, postcard：", postcard.getUri());
                 } else {
                     postcard.putField(FIELD_STARTED_ACTIVITY, EXTERNAL_ACTIVITY);
-                    RLogUtils.i("external activity started by StartActivityAction, postcard：", postcard);
+                    RLogUtils.i("external activity started by StartActivityAction, postcard：", postcard.getUri());
                 }
                 return ResultCode.CODE_SUCCESS;
             } else {
@@ -162,10 +162,10 @@ public class DefaultActivityLauncher implements ActivityLauncher {
 
             if (internal) {
                 postcard.putField(FIELD_STARTED_ACTIVITY, INTERNAL_ACTIVITY);
-                RLogUtils.i("internal activity started, postcard：", postcard);
+                RLogUtils.i("internal activity started, postcard：", postcard.getUri());
             } else {
                 postcard.putField(FIELD_STARTED_ACTIVITY, EXTERNAL_ACTIVITY);
-                RLogUtils.i("external activity started, postcard：", postcard);
+                RLogUtils.i("external activity started, postcard：", postcard.getUri());
             }
 
             return ResultCode.CODE_SUCCESS;

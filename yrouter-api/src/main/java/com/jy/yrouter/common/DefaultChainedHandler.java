@@ -75,4 +75,9 @@ public class DefaultChainedHandler extends ChainedHandler {
         return new UriAnnotationHandler(defaultScheme, defaultHost);
     }
 
+    @NonNull
+    @Override
+    public String toString() {
+        return "DefaultChainedHandler";
+    }
 }

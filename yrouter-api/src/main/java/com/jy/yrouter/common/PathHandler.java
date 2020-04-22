@@ -138,4 +138,10 @@ public class PathHandler extends PostcardHandler {
             callback.onNext();
         }
     }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "PathHandler";
+    }
 }
