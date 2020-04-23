@@ -1,3 +1,5 @@
+import org.gradle.internal.jvm.Jvm
+
 apply plugin: 'java-library'
 
 dependencies {
@@ -5,6 +7,7 @@ dependencies {
     implementation 'com.google.auto.service:auto-service:1.0-rc3'
     annotationProcessor 'com.google.auto.service:auto-service:1.0-rc3'
     implementation 'com.squareup:javapoet:1.10.0'
+    implementation files(Jvm.current().getToolsJar())
     implementation project(':yrouter-annotation')
 }
 

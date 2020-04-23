@@ -26,7 +26,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation project(':yrouter-annotation')
     implementation project(':yrouter-api')
     annotationProcessor project(':yrouter-compiler')
 

@@ -34,6 +34,7 @@ public class ServiceLoader<I> {
         protected void doInit() {
             try {
                 // 反射调用Init类，避免引用的类过多，导致main dex capacity exceeded问题
+                //利用插件创建ServiceLoaderInit，使所有ServiceInit_xxx加入到ServiceLoaderInit
                 Class.forName(Const.SERVICE_LOADER_INIT)
                         .getMethod(Const.INIT_METHOD)
                         .invoke(null);
