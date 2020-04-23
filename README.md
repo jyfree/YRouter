@@ -5,21 +5,11 @@
 
 ## 介绍
 
-YRouter为解决组件化而生
+YRouter基于WMRouter迁移到androidX
 
-## 一、yrouter-compiler
+## 一、此项目属于个人学习WMRouter，并非抄袭WMRouter，只是按照原项目重新敲了一遍，并修改部分代码，使自己更加深入了解核心思想
 
-编译生成代码：
- 1. 测试**123**
- 2. 测试**456**
+ 1. 原作者项目 https://github.com/meituan/WMRouter
 
-## 二、kotlin使用
-
- 1. build.gradle加入:
-    apply plugin: 'kotlin-kapt'
-    kapt project(':yrouter-compiler')
-
- 2. gradle.properties加入:
-    kapt.incremental.apt = false
 
 
