@@ -34,7 +34,6 @@ public class UriAnnotationProcessor extends BaseProcessor {
 
         CodeBlock.Builder builder = CodeBlock.builder();
         String hash = null;
-        String name = null;
         for (Element element : env.getElementsAnnotatedWith(RouterUri.class)) {
             if (!(element instanceof Symbol.ClassSymbol)) {
                 continue;
@@ -53,8 +52,7 @@ public class UriAnnotationProcessor extends BaseProcessor {
             }
 
             if (hash == null) {
-                name = cls.className();
-                hash = hash(name);
+                hash = hash(cls.className());
             }
             CodeBlock handler = buildHandler(isActivity, cls);
             CodeBlock interceptors = buildInterceptors(getInterceptors(uri));
@@ -62,6 +60,8 @@ public class UriAnnotationProcessor extends BaseProcessor {
             // scheme, host, path, handler, exported, interceptors
             String[] pathList = uri.path();
             for (String path : pathList) {
+                messager.printMessage(Diagnostic.Kind.NOTE, " --> prepare--from--" + handler + "--path--" + path);
+
                 builder.addStatement("handler.register($S, $S, $S, $L, $L$L)",
                         uri.scheme(),
                         uri.host(),
@@ -73,10 +73,9 @@ public class UriAnnotationProcessor extends BaseProcessor {
         }
         if (hash == null) {
             hash = randomHash();
-            name = hash;
         }
         buildHandlerInitClass(builder.build(), "UriAnnotationInit" + Const.SPLITTER + hash,
-                Const.URI_ANNOTATION_HANDLER_CLASS, Const.URI_ANNOTATION_INIT_CLASS, name);
+                Const.URI_ANNOTATION_HANDLER_CLASS, Const.URI_ANNOTATION_INIT_CLASS);
 
         messager.printMessage(Diagnostic.Kind.NOTE, "UriAnnotationProcessor--finish...");
         return true;

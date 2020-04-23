@@ -34,7 +34,6 @@ public class PageAnnotationProcessor extends BaseProcessor {
 
         CodeBlock.Builder builder = CodeBlock.builder();
         String hash = null;
-        String name = null;
         for (Element element : env.getElementsAnnotatedWith(RouterPage.class)) {
             if (!(element instanceof Symbol.ClassSymbol)) {
                 continue;
@@ -53,8 +52,7 @@ public class PageAnnotationProcessor extends BaseProcessor {
             }
 
             if (hash == null) {
-                name = cls.className();
-                hash = hash(name);
+                hash = hash(cls.className());
             }
 
             CodeBlock handler;
@@ -68,6 +66,7 @@ public class PageAnnotationProcessor extends BaseProcessor {
             // path, handler, interceptors
             String[] pathList = page.path();
             for (String path : pathList) {
+                messager.printMessage(Diagnostic.Kind.NOTE, " --> prepare--from--" + handler + "--path--" + path);
                 builder.addStatement("handler.register($S, $L$L)",
                         path,
                         handler,
@@ -76,10 +75,9 @@ public class PageAnnotationProcessor extends BaseProcessor {
         }
         if (hash == null) {
             hash = randomHash();
-            name = hash;
         }
         buildHandlerInitClass(builder.build(), "PageAnnotationInit" + Const.SPLITTER + hash,
-                Const.PAGE_ANNOTATION_HANDLER_CLASS, Const.PAGE_ANNOTATION_INIT_CLASS, name);
+                Const.PAGE_ANNOTATION_HANDLER_CLASS, Const.PAGE_ANNOTATION_INIT_CLASS);
 
         messager.printMessage(Diagnostic.Kind.NOTE, "PageAnnotationProcessor--finish...");
 

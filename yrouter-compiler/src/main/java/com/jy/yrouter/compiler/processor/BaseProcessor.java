@@ -189,11 +189,10 @@ public abstract class BaseProcessor extends AbstractProcessor {
      * @param genClassName     生成class的SimpleClassName，如：UriAnnotationInit_454ff5f70a86b2c1b58b6cf7106b427e
      * @param handlerClassName Handler类名，如：com.jy.yrouter.common.UriAnnotationHandler
      * @param interfaceName    接口名，如：com.jy.yrouter.common.IUriAnnotationInit
-     * @param targetClassName  目标注解类，如：com.jy.yrouter.simple.TestBasicActivity
      */
-    public void buildHandlerInitClass(CodeBlock code, String genClassName, String handlerClassName, String interfaceName, String targetClassName) {
+    public void buildHandlerInitClass(CodeBlock code, String genClassName, String handlerClassName, String interfaceName) {
 
-        messager.printMessage(Diagnostic.Kind.NOTE, " --> create " + genClassName + "--from--" + targetClassName);
+        messager.printMessage(Diagnostic.Kind.NOTE, " --> create " + genClassName);
 
         MethodSpec methodSpec = MethodSpec.methodBuilder(Const.INIT_METHOD)
                 .addModifiers(Modifier.PUBLIC)
@@ -211,7 +210,7 @@ public abstract class BaseProcessor extends AbstractProcessor {
                     .build()
                     .writeTo(filer);
         } catch (IOException e) {
-            messager.printMessage(Diagnostic.Kind.NOTE, " --> create " + genClassName + "--from--" + targetClassName + "error");
+            messager.printMessage(Diagnostic.Kind.NOTE, " --> create " + genClassName + "error");
             throw new RuntimeException(e);
         }
 
