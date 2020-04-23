@@ -34,6 +34,9 @@
 
         <activity android:name=".activity.TestUriRequestActivity" />
         <activity android:name=".activity.TestBasicActivity" />
+        <activity android:name=".activity.ExportedActivity" />
+        <activity android:name=".fragment.FragmentDemoActivity" />
+        <activity android:name=".fragment.FragmentToFragmentDemoActivity" />
 
     </application>
 

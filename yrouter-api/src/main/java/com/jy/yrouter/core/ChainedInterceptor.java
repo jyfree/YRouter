@@ -32,7 +32,7 @@ public class ChainedInterceptor implements Interceptor {
                       @NonNull final InterceptCallback callback) {
         if (iterator.hasNext()) {
             Interceptor t = iterator.next();
-            RLogUtils.iFormat("拦截器责任链---拦截器：%s, 路由容器：%s", t.getClass().getSimpleName(), postcard.getUri());
+            RLogUtils.iFormat("拦截器责任链---拦截器：%s, Postcard：%s", t.getClass().getSimpleName(), postcard.getUri());
             t.intercept(postcard, new InterceptCallback() {
                 @Override
                 public void onNext() {

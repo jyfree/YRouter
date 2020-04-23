@@ -77,7 +77,9 @@ public class UriAnnotationProcessor extends BaseProcessor {
         buildHandlerInitClass(builder.build(), "UriAnnotationInit" + Const.SPLITTER + hash,
                 Const.URI_ANNOTATION_HANDLER_CLASS, Const.URI_ANNOTATION_INIT_CLASS);
 
-        messager.printMessage(Diagnostic.Kind.NOTE, "UriAnnotationProcessor--finish...");
+        messager.printMessage(Diagnostic.Kind.NOTE, "UriAnnotationProcessor--finish...\n\n");
+        messager.printMessage(Diagnostic.Kind.NOTE, "...");
+        messager.printMessage(Diagnostic.Kind.NOTE, "...");
         return true;
     }
 

@@ -80,7 +80,8 @@ public class PageAnnotationProcessor extends BaseProcessor {
                 Const.PAGE_ANNOTATION_HANDLER_CLASS, Const.PAGE_ANNOTATION_INIT_CLASS);
 
         messager.printMessage(Diagnostic.Kind.NOTE, "PageAnnotationProcessor--finish...");
-
+        messager.printMessage(Diagnostic.Kind.NOTE, "...");
+        messager.printMessage(Diagnostic.Kind.NOTE, "...");
         return true;
     }
 

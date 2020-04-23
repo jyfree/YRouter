@@ -39,12 +39,6 @@ public class MainActivity extends BaseActivity {
             // 自定义Scheme、Host测试；外部跳转测试
             DemoConstant.DEMO_SCHEME + "://" + DemoConstant.DEMO_HOST
                     + DemoConstant.EXPORTED_PATH,
-            DemoConstant.DEMO_SCHEME + "://" + DemoConstant.DEMO_HOST
-                    + DemoConstant.NOT_EXPORTED_PATH,
-
-            // Library工程测试
-            DemoConstant.TEST_LIB1,
-            DemoConstant.TEST_LIB2,
 
             // 拨打电话
             DemoConstant.TEL,
