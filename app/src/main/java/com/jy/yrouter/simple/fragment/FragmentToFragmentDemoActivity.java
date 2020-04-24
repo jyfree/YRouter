@@ -10,6 +10,11 @@ import com.jy.yrouter.simple.base.BaseActivity;
 import com.jy.yrouter.simple.constant.DemoConstant;
 
 
+/**
+ * @description fragment to fragment 示例
+ * @date: 2020/4/23 16:06
+ * @author: jy
+ */
 @RouterUri(path = DemoConstant.TEST_FRAGMENT_TO_FRAGMENT_ACTIVITY)
 public class FragmentToFragmentDemoActivity extends BaseActivity {
 

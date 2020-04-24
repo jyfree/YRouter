@@ -23,8 +23,18 @@ public class DemoConstant {
     public static final String TEST_DEMO_FRAGMENT_1 = "/fragment/demo_fragment_1";
     public static final String TEST_DEMO_FRAGMENT_2 = "/fragment/demo_fragment_2";
 
-    public static final String ADD_METHOD = "/method/add";
-
+    //高级示例
     public static final String ADVANCED_DEMO = "/advanced_demo";
+
+    public static final String ACCOUNT_WITH_LOGIN_INTERCEPTOR = "/account_with_login";
+    public static final String LOGIN = "/login";
+
+    public static final String SHOW_TOAST_HANDLER = "/show_toast_handler";
+
+    public static final String HOME_AB_TEST = "/home_ab_test";
+
+    //service
+    public static final String SINGLETON = "/singleton";
+
 
 }

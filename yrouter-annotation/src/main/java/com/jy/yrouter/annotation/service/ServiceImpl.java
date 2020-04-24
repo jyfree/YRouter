@@ -16,10 +16,12 @@ public class ServiceImpl {
         if (impl != null && previous != null && !stringEquals(previous.implementation,
                 impl.implementation)) {
             if (DEFAULT_IMPL_KEY.equals(impl.getKey())) {
-                return String.format("接口%s 的默认实现只允许存在一个\n目前存在多个默认实现: %s, %s",
+                //接口interfaceName的默认实现只允许存在一个,目前存在多个默认实现: previous, impl
+                return String.format("Interface %s Only one default implementation is allowed \n There are currently multiple default implementations: %s, %s",
                         interfaceName, previous, impl);
             } else {
-                return String.format("接口%s对应key='%s'存在多个实现: %s, %s",
+                //接口interfaceName 对应key=impl.getKey() 存在多个实现: previous, impl
+                return String.format("Interface %s Corresponding key='%s' Multiple implementations exist: %s, %s",
                         interfaceName, impl.getKey(), previous, impl);
             }
 
@@ -43,7 +45,7 @@ public class ServiceImpl {
 
     public ServiceImpl(String key, Class implementation, boolean singleton) {
         if (key == null || implementation == null) {
-            throw new RuntimeException("key和implementation不应该为空");
+            throw new RuntimeException("key and implementation Should not be empty");
         }
         this.key = key;
         this.implementation = "";
@@ -53,7 +55,7 @@ public class ServiceImpl {
 
     public ServiceImpl(String key, String implementation, boolean singleton) {
         if (isEmpty(implementation)) {
-            throw new RuntimeException("implementation不应该为空");
+            throw new RuntimeException("implementation Should not be empty");
         }
         this.key = isEmpty(key) ? implementation : key; // 没有指定key，则为implementation
         this.implementation = implementation;

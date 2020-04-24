@@ -19,7 +19,11 @@ import com.jy.yrouter.simple.R;
 import com.jy.yrouter.simple.activity.TestUriRequestActivity;
 import com.jy.yrouter.simple.constant.DemoConstant;
 
-
+/**
+ * @description fragment跳转到activity示例
+ * @date: 2020/4/23 16:04
+ * @author: jy
+ */
 @RouterPage(path = DemoConstant.TEST_DEMO_FRAGMENT_2)
 public class Demo2Fragment extends Fragment {
 

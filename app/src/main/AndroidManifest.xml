@@ -37,6 +37,11 @@
         <activity android:name=".activity.ExportedActivity" />
         <activity android:name=".fragment.FragmentDemoActivity" />
         <activity android:name=".fragment.FragmentToFragmentDemoActivity" />
+        <activity android:name=".advanced.AdvancedDemoActivity" />
+        <activity android:name=".advanced.abtest.HomeActivityA" />
+        <activity android:name=".advanced.abtest.HomeActivityB" />
+        <activity android:name=".advanced.account.LoginActivity" />
+        <activity android:name=".advanced.account.UserAccountActivity" />
 
     </application>
 

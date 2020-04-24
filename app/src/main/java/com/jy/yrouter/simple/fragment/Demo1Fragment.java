@@ -20,6 +20,11 @@ import com.jy.yrouter.simple.R;
 import com.jy.yrouter.simple.constant.DemoConstant;
 
 
+/**
+ * @description fragment to fragment跳转与创建示例
+ * @date: 2020/4/23 16:04
+ * @author: jy
+ */
 @RouterPage(path = DemoConstant.TEST_DEMO_FRAGMENT_1)
 public class Demo1Fragment extends Fragment {
 

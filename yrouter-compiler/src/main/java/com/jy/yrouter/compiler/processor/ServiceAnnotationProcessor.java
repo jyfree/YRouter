@@ -22,6 +22,7 @@ import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.type.MirroredTypesException;
 import javax.lang.model.type.TypeMirror;
+import javax.tools.Diagnostic;
 
 @AutoService(Processor.class)
 @SupportedSourceVersion(SourceVersion.RELEASE_7)
@@ -38,7 +39,11 @@ public class ServiceAnnotationProcessor extends BaseProcessor {
         if (env.processingOver()) {
             generateInitClass();
         } else {
+            messager.printMessage(Diagnostic.Kind.NOTE, "ServiceAnnotationProcessor--processing...");
             processAnnotations(env);
+            messager.printMessage(Diagnostic.Kind.NOTE, "ServiceAnnotationProcessor--finish...");
+            messager.printMessage(Diagnostic.Kind.NOTE, "...");
+            messager.printMessage(Diagnostic.Kind.NOTE, "...");
         }
         return true;
     }
@@ -66,14 +71,17 @@ public class ServiceAnnotationProcessor extends BaseProcessor {
             boolean singleton = service.singleton();
             final boolean defaultImpl = service.defaultImpl();
 
+            messager.printMessage(Diagnostic.Kind.NOTE, " --> prepare--from--" + implementationName);
+
             if (typeMirrors != null && !typeMirrors.isEmpty()) {
                 for (TypeMirror mirror : typeMirrors) {
                     if (mirror == null) {
                         continue;
                     }
                     if (!isConcreteSubType(cls, mirror)) {
-                        String msg = cls.className() + "没有实现注解" + RouterService.class.getName()
-                                + "标注的接口" + mirror.toString();
+                        //没有实现注解RouterService标注的接口
+                        String msg = cls.className() + "No implementation annotation" + RouterService.class.getName()
+                                + "Labeled interface" + mirror.toString();
                         throw new RuntimeException(msg);
                     }
                     String interfaceName = getClassName(mirror);
@@ -92,7 +100,8 @@ public class ServiceAnnotationProcessor extends BaseProcessor {
                     if (keys.length > 0) {
                         for (String key : keys) {
                             if (key.contains(":")) {
-                                String msg = String.format("%s: 注解%s的key参数不可包含冒号",
+                                //实现类注解RouterService的key参数不可包含冒号
+                                String msg = String.format("%s: annotation %s Key parameter cannot contain colon",
                                         implementationName, RouterService.class.getName());
                                 throw new RuntimeException(msg);
                             }
@@ -107,9 +116,12 @@ public class ServiceAnnotationProcessor extends BaseProcessor {
     }
 
     private void generateInitClass() {
+        messager.printMessage(Diagnostic.Kind.NOTE, " --> ServiceAnnotationProcessor--generate--init--Class--start");
+
         if (mEntityMap.isEmpty() || mHash == null) {
             return;
         }
+
         ServiceInitClassBuilder generator = new ServiceInitClassBuilder("ServiceInit" + Const.SPLITTER + mHash);
         for (Map.Entry<String, Entity> entry : mEntityMap.entrySet()) {
             for (ServiceImpl service : entry.getValue().getMap().values()) {
@@ -117,6 +129,10 @@ public class ServiceAnnotationProcessor extends BaseProcessor {
             }
         }
         generator.build();
+
+        messager.printMessage(Diagnostic.Kind.NOTE, " --> ServiceAnnotationProcessor--generate--init--Class--end");
+        messager.printMessage(Diagnostic.Kind.NOTE, "...");
+        messager.printMessage(Diagnostic.Kind.NOTE, "...");
     }
 
     private static List<? extends TypeMirror> getInterface(RouterService service) {

@@ -9,6 +9,7 @@ import com.jy.yrouter.common.DefaultPostcard;
 import com.jy.yrouter.core.OnCompleteListener;
 import com.jy.yrouter.core.Postcard;
 import com.jy.yrouter.simple.base.BaseActivity;
+import com.jy.yrouter.utils.RLogUtils;
 
 
 /**
@@ -21,6 +22,7 @@ public class UriProxyActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        RLogUtils.i("外部跳转--UriProxyActivity");
         DefaultPostcard.startFromProxyActivity(this, new OnCompleteListener() {
             @Override
             public void onSuccess(@NonNull Postcard postcard) {
