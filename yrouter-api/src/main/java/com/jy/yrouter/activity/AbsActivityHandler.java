@@ -71,8 +71,4 @@ public abstract class AbsActivityHandler extends PostcardHandler {
 
     }
 
-    @Override
-    public String toString() {
-        return "ActivityHandler";
-    }
 }

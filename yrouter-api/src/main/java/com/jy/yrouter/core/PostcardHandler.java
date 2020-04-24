@@ -66,4 +66,10 @@ public abstract class PostcardHandler {
      * 处理Postcard。在 {@link Interceptor} 之后调用。
      */
     protected abstract void handleInternal(@NonNull Postcard postcard, @NonNull InterceptCallback callback);
+
+    @NonNull
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }

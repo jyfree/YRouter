@@ -63,9 +63,4 @@ public class PageAnnotationHandler extends PathHandler {
     protected boolean shouldHandle(@NonNull Postcard postcard) {
         return SCHEME_HOST.matches(postcard.schemeHost());
     }
-
-    @Override
-    public String toString() {
-        return "PageAnnotationHandler";
-    }
 }

@@ -33,6 +33,6 @@ public class ActivityClassNameHandler extends AbsActivityHandler {
 
     @Override
     public String toString() {
-        return "ActivityHandler (" + mClassName + ")";
+        return "ActivityClassNameHandler (" + mClassName + ")";
     }
 }

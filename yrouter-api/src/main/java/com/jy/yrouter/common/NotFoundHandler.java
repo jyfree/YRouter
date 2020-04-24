@@ -28,9 +28,4 @@ public class NotFoundHandler extends PostcardHandler {
     protected void handleInternal(@NonNull Postcard postcard, @NonNull InterceptCallback callback) {
         callback.onComplete(ResultCode.CODE_NOT_FOUND);
     }
-
-    @Override
-    public String toString() {
-        return "NotFoundHandler";
-    }
 }

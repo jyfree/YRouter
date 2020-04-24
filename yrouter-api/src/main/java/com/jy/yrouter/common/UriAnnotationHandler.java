@@ -156,8 +156,4 @@ public class UriAnnotationHandler extends PostcardHandler {
         }
     }
 
-    @Override
-    public String toString() {
-        return "UriAnnotationHandler";
-    }
 }

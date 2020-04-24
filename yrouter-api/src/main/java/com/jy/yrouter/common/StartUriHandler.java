@@ -60,9 +60,4 @@ public class StartUriHandler extends PostcardHandler {
             callback.onNext();
         }
     }
-
-    @Override
-    public String toString() {
-        return "StartUriHandler";
-    }
 }
