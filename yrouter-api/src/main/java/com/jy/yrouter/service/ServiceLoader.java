@@ -5,8 +5,8 @@ import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.jy.yrouter.annotation.common.Const;
 import com.jy.yrouter.annotation.RouterProvider;
+import com.jy.yrouter.annotation.common.Const;
 import com.jy.yrouter.annotation.service.ServiceImpl;
 import com.jy.yrouter.components.RouterComponents;
 import com.jy.yrouter.utils.LazyInitHelper;
@@ -28,17 +28,30 @@ import java.util.Map;
 public class ServiceLoader<I> {
 
     private static final Map<Class, ServiceLoader> SERVICES = new HashMap<>();
+    public static List<String> classList = new ArrayList<>();
 
     private static final LazyInitHelper sInitHelper = new LazyInitHelper("ServiceLoader") {
         @Override
         protected void doInit() {
             try {
                 // 反射调用Init类，避免引用的类过多，导致main dex capacity exceeded问题
-                //利用插件创建ServiceLoaderInit，使所有ServiceInit_xxx加入到ServiceLoaderInit
-                Class.forName(Const.SERVICE_LOADER_INIT)
-                        .getMethod(Const.INIT_METHOD)
-                        .invoke(null);
-                RLogUtils.i("[ServiceLoader] init class invoked");
+                if (classList.size() > 0) {
+                    //利用包名获取所有类
+                    RLogUtils.i("[ServiceLoader] init class invoked to classList");
+                    for (String name : classList) {
+                        RLogUtils.iFormat("[ServiceLoader] init class invoked name：%s", name);
+                        Class.forName(name)
+                                .getMethod(Const.INIT_METHOD)
+                                .invoke(null);
+                    }
+                } else {
+                    RLogUtils.i("[ServiceLoader] init class invoked to ServiceLoaderInit");
+                    //利用插件创建ServiceLoaderInit，使所有ServiceInit_xxx加入到ServiceLoaderInit
+                    Class.forName(Const.SERVICE_LOADER_INIT)
+                            .getMethod(Const.INIT_METHOD)
+                            .invoke(null);
+                }
+                RLogUtils.i("[ServiceLoader] init class invoked end");
             } catch (Exception e) {
                 RLogUtils.e(e);
             }

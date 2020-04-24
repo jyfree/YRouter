@@ -26,5 +26,7 @@ public class DemoApplication extends Application {
 
         // 初始化
         Router.init(chainedHandler);
+        //没有使用插件时，必须调用此方法
+        Router.initServiceLoaderList(this.getPackageCodePath());
     }
 }
