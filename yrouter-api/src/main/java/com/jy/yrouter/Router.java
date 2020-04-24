@@ -26,7 +26,6 @@ import com.jy.yrouter.method.Func9;
 import com.jy.yrouter.method.FuncN;
 import com.jy.yrouter.service.IFactory;
 import com.jy.yrouter.service.ServiceLoader;
-import com.jy.yrouter.utils.ClassUtils;
 import com.jy.yrouter.utils.RLogUtils;
 
 import java.util.List;
@@ -65,12 +64,12 @@ public class Router {
 
     /**
      * 没有使用插件时，需要调用此方法
-     * 加载 {@link Const#GEN_PKG_SERVICE}包下的所有类名
+     * 开启DexFile加载 {@link Const#GEN_PKG_SERVICE}包下的所有类名
      *
-     * @param fileName 文件路径
+     * @param context 上下文
      */
-    public static void initServiceLoaderList(String fileName) {
-        ServiceLoader.classList = ClassUtils.getClassName(fileName, Const.GEN_PKG_SERVICE);
+    public static void openDexFileLoaderService(Context context) {
+        ServiceLoader.dexFileName = context.getPackageCodePath();
     }
 
     /**

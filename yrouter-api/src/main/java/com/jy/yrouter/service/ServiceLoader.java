@@ -9,6 +9,7 @@ import com.jy.yrouter.annotation.RouterProvider;
 import com.jy.yrouter.annotation.common.Const;
 import com.jy.yrouter.annotation.service.ServiceImpl;
 import com.jy.yrouter.components.RouterComponents;
+import com.jy.yrouter.utils.ClassUtils;
 import com.jy.yrouter.utils.LazyInitHelper;
 import com.jy.yrouter.utils.RLogUtils;
 import com.jy.yrouter.utils.SingletonPool;
@@ -28,16 +29,17 @@ import java.util.Map;
 public class ServiceLoader<I> {
 
     private static final Map<Class, ServiceLoader> SERVICES = new HashMap<>();
-    public static List<String> classList = new ArrayList<>();
+    public static String dexFileName = null;
 
     private static final LazyInitHelper sInitHelper = new LazyInitHelper("ServiceLoader") {
         @Override
         protected void doInit() {
             try {
                 // 反射调用Init类，避免引用的类过多，导致main dex capacity exceeded问题
-                if (classList.size() > 0) {
+                if (null != dexFileName && !dexFileName.isEmpty()) {
                     //利用包名获取所有类
                     RLogUtils.i("[ServiceLoader] init class invoked to classList");
+                    List<String> classList = ClassUtils.getClassName(dexFileName, Const.GEN_PKG_SERVICE);
                     for (String name : classList) {
                         RLogUtils.iFormat("[ServiceLoader] init class invoked name：%s", name);
                         Class.forName(name)
