@@ -1,4 +1,4 @@
-package com.jy.yrouter.simple.constant;
+package com.jy.yrouter.appbaselibrary;
 
 public class DemoConstant {
 
@@ -37,4 +37,6 @@ public class DemoConstant {
     public static final String SINGLETON = "/singleton";
 
 
+    // method
+    public static final String ADD_METHOD = "/method/add";
 }

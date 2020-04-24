@@ -5,11 +5,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.jy.yrouter.annotation.RouterUri;
+import com.jy.yrouter.appbaselibrary.DemoConstant;
 import com.jy.yrouter.core.InterceptCallback;
 import com.jy.yrouter.core.Postcard;
 import com.jy.yrouter.core.PostcardHandler;
 import com.jy.yrouter.core.ResultCode;
-import com.jy.yrouter.simple.constant.DemoConstant;
 
 /**
  * @description 自定义PostcardHandler

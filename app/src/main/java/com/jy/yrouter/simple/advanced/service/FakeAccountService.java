@@ -6,7 +6,7 @@ import androidx.annotation.NonNull;
 
 import com.jy.yrouter.Router;
 import com.jy.yrouter.annotation.RouterService;
-import com.jy.yrouter.simple.constant.DemoConstant;
+import com.jy.yrouter.appbaselibrary.DemoConstant;
 
 import java.util.ArrayList;
 import java.util.List;

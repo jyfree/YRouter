@@ -1,16 +1,21 @@
 package com.jy.yrouter.simple.kotlin
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.jy.yrouter.Router
+import com.jy.yrouter.annotation.RouterUri
+import com.jy.yrouter.appbaselibrary.DemoConstant
+import kotlinx.android.synthetic.main.activity_main.*
 
+@RouterUri(path = [DemoConstant.KOTLIN])
 class MainActivity : AppCompatActivity() {
 
-    lateinit var mTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mTextView.text = "kotlin apt bind TextView success"
+
+        val a = Router.callMethod(DemoConstant.ADD_METHOD, 2, 3) as Int
+        tv.text = "Kotlin模块调用Java模块的Service \n 2 + 3 = {$a}"
     }
 }

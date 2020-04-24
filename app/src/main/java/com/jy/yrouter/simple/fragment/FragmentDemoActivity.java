@@ -5,9 +5,9 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import com.jy.yrouter.annotation.RouterUri;
+import com.jy.yrouter.appbaselibrary.DemoConstant;
 import com.jy.yrouter.simple.R;
 import com.jy.yrouter.simple.base.BaseActivity;
-import com.jy.yrouter.simple.constant.DemoConstant;
 
 
 /**

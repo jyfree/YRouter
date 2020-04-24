@@ -7,10 +7,10 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 
 import com.jy.yrouter.annotation.RouterUri;
+import com.jy.yrouter.appbaselibrary.DemoConstant;
 import com.jy.yrouter.simple.R;
 import com.jy.yrouter.simple.advanced.service.DemoServiceManager;
 import com.jy.yrouter.simple.base.BaseActivity;
-import com.jy.yrouter.simple.constant.DemoConstant;
 
 /**
  * @description 用户账户页，需要先登录

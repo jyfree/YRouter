@@ -11,12 +11,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.jy.yrouter.Router;
+import com.jy.yrouter.appbaselibrary.DemoConstant;
 import com.jy.yrouter.common.DefaultPostcard;
 import com.jy.yrouter.core.OnCompleteListener;
 import com.jy.yrouter.core.Postcard;
 import com.jy.yrouter.simple.activity.TestUriRequestActivity;
 import com.jy.yrouter.simple.base.BaseActivity;
-import com.jy.yrouter.simple.constant.DemoConstant;
 
 /**
  * @description 基本用法Demo

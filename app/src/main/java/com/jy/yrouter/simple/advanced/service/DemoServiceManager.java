@@ -1,7 +1,7 @@
 package com.jy.yrouter.simple.advanced.service;
 
 import com.jy.yrouter.Router;
-import com.jy.yrouter.simple.constant.DemoConstant;
+import com.jy.yrouter.appbaselibrary.DemoConstant;
 
 /**
  * @description 服务管理，可获取接口实现类

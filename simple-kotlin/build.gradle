@@ -29,6 +29,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(':appbaselibrary')
     implementation project(':yrouter-api')
     kapt project(':yrouter-compiler')
 

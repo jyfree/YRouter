@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 
 import com.jy.yrouter.activity.AbsActivityHandler;
 import com.jy.yrouter.annotation.RouterUri;
+import com.jy.yrouter.appbaselibrary.DemoConstant;
 import com.jy.yrouter.core.Postcard;
-import com.jy.yrouter.simple.constant.DemoConstant;
 
 
 /**

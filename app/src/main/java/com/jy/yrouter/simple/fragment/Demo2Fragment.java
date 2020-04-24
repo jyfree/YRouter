@@ -12,12 +12,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.jy.yrouter.annotation.RouterPage;
+import com.jy.yrouter.appbaselibrary.DemoConstant;
 import com.jy.yrouter.common.FragmentPostcard;
 import com.jy.yrouter.core.OnCompleteListener;
 import com.jy.yrouter.core.Postcard;
 import com.jy.yrouter.simple.R;
 import com.jy.yrouter.simple.activity.TestUriRequestActivity;
-import com.jy.yrouter.simple.constant.DemoConstant;
 
 /**
  * @description fragment跳转到activity示例

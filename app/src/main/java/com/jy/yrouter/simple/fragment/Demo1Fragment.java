@@ -11,13 +11,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.jy.yrouter.annotation.RouterPage;
+import com.jy.yrouter.appbaselibrary.DemoConstant;
 import com.jy.yrouter.common.PageAnnotationHandler;
 import com.jy.yrouter.core.OnCompleteListener;
 import com.jy.yrouter.core.Postcard;
 import com.jy.yrouter.fragment.FragmentBuildPostcard;
 import com.jy.yrouter.fragment.FragmentTransactionPostcard;
 import com.jy.yrouter.simple.R;
-import com.jy.yrouter.simple.constant.DemoConstant;
 
 
 /**

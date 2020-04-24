@@ -2,8 +2,8 @@ package com.jy.yrouter.simple.activity;
 
 
 import com.jy.yrouter.annotation.RouterUri;
+import com.jy.yrouter.appbaselibrary.DemoConstant;
 import com.jy.yrouter.simple.base.BaseActivity;
-import com.jy.yrouter.simple.constant.DemoConstant;
 
 /**
  * @description uri scheme示例

@@ -3,11 +3,11 @@ package com.jy.yrouter.simple.fragment;
 import android.os.Bundle;
 
 import com.jy.yrouter.annotation.RouterUri;
+import com.jy.yrouter.appbaselibrary.DemoConstant;
 import com.jy.yrouter.common.PageAnnotationHandler;
 import com.jy.yrouter.fragment.FragmentTransactionPostcard;
 import com.jy.yrouter.simple.R;
 import com.jy.yrouter.simple.base.BaseActivity;
-import com.jy.yrouter.simple.constant.DemoConstant;
 
 
 /**
