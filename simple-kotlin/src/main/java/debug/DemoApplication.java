@@ -1,4 +1,4 @@
-package com.jy.yrouter.simple.kotlin;
+package debug;
 
 import android.annotation.SuppressLint;
 import android.app.Application;
