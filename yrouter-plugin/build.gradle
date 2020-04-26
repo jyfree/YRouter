@@ -1,0 +1,16 @@
+apply plugin: 'groovy'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation project(':yrouter-annotation')
+    implementation 'com.android.tools.build:gradle:3.2.1'
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
