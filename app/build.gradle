@@ -1,4 +1,9 @@
 apply plugin: 'com.android.application'
+apply plugin: 'YRouter'
+
+//YRouter {
+//    enableDebug = true // 调试开关
+//}
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -27,8 +32,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':appbaselibrary')
-    implementation project(':yrouter-api')
-    annotationProcessor project(':yrouter-compiler')
+    implementation rootProject.ext.dependencies.yrouter_api
+    annotationProcessor rootProject.ext.dependencies.yrouter_compiler
 
     implementation rootProject.ext.dependencies.androidx_appcompat
     implementation rootProject.ext.dependencies.androidx_core_ktx
