@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -27,9 +28,20 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rootProject.ext.dependencies.androidx_appcompat
     implementation rootProject.ext.dependencies.androidx_core_ktx
-    api project(':yrouter-annotation')
+    api rootProject.ext.dependencies.yrouter_annotation
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+publish {
+    artifactId = 'yrouter-api'
+    userOrg = rootProject.userOrg//bintray.com用户名
+    groupId = "com.jy.yrouter-api"//jcenter上的路径
+    uploadName = artifactId//项目名称
+    publishVersion = "1.0.0"//版本号
+    desc = "a easy router api to use for Android M "//项目介绍
+    website = rootProject.website//项目主页
+    licences = rootProject.licences
 }
