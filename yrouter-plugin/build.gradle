@@ -19,10 +19,10 @@ tasks.withType(JavaCompile) {
 publish {
     artifactId = 'yrouter-plugin'
     userOrg = rootProject.userOrg//bintray.com用户名
-    groupId = "com.jy.yrouter-plugin"//jcenter上的路径
+    groupId = "com.jy.yrouter"//jcenter上的路径
     uploadName = artifactId//项目名称
     publishVersion = "1.0.0"//版本号
-    desc = "a easy plugin to use for Android M "//项目介绍
+    desc = "a easy plugin to use for gradle "//项目介绍
     website = rootProject.website//项目主页
     licences = rootProject.licences
 }

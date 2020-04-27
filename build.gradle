@@ -14,7 +14,7 @@ buildscript {
         classpath 'com.novoda:bintray-release:0.9.1'//上传到jcenter用到
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:0.9.18"//上传到jcenter kotlin用到
         //YRouter插件
-        classpath "com.jy.yrouter-plugin:yrouter-plugin:1.0.0"
+        classpath "com.jy.yrouter:yrouter-plugin:1.0.0"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -40,6 +40,7 @@ allprojects {
 
 ext {
     userOrg = 'ljyfree'//bintray.com用户名
+    groupId = 'com.jy.yrouter'//组织id，jcenter上的路径
     website = 'https://github.com/jyfree/YRouter'
     licences = ['Apache-2.0']
 }
