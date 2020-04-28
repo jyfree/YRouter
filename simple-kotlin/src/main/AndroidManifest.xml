@@ -4,6 +4,7 @@
 
     <application android:theme="@style/AppTheme">
         <activity android:name=".KotlinActivity" />
+        <activity android:name=".KotlinMainActivity" />
     </application>
 
 </manifest>
